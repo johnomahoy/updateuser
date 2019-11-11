@@ -1,9 +1,9 @@
 <?php
 //Test Connection
-require_once("isdk.php");	
+require_once("isdk.php");
 $app = new iSDK;
 
-if( $app->cfgCon("kf342")){ 
+if( $app->cfgCon("kf342")){
 //Get the data
 	$firstname = $_REQUEST['firstname'];
 	$lastname = $_REQUEST['lastname'];
@@ -12,16 +12,16 @@ if( $app->cfgCon("kf342")){
 	$WebsiteUserId = $_REQUEST['WebsiteUserId'];
 	$TC = $_REQUEST['tc'];
 //Other fields
-	$street = $_REQUEST['street'];  
+	$street = $_REQUEST['street'];
 	$postalcode = $_REQUEST['postalcode'];
-	$country = $_REQUEST['country']; 
-	$city = $_REQUEST['city']; 
+	$country = $_REQUEST['country'];
+	$city = $_REQUEST['city'];
 	$FacebookHandURL = $_REQUEST['FacebookHandURL'];
 
 //Fetch Data
 	$returnFields = array('Id');
 	$contacts = $app->dsFind('Contact',1,0,'Website',$WebsiteUserId,$returnFields);
-	
+
 	foreach($contacts as $contact=>$key){
 		foreach($key as $contact_id){
 			$contact_id = $contact_id;
@@ -32,7 +32,7 @@ if( $app->cfgCon("kf342")){
 	//-----> Please follow this array format and array name which can be found below --> firstname,lastname,email,phonenumber,websiteuserID,postalcode,country,city,street
 	//----> array format-> $store = array("Jerbie","test","email@test.com","092612356","60","9200","singa","citytest","streettesting2");
 
-//Loop the data 
+	//Loop the data
 	$counter = 1;
 	$arr;
 	$counter;
@@ -49,7 +49,7 @@ if( $app->cfgCon("kf342")){
 	$country = $arr[7];
 	$city = $arr[8];
 	$streetaddress = $arr[9];
-	
+
 //Update Contact
 	$conDat = array('FirstName' => $firstname,
 	'LastName' => $lastname,
@@ -60,9 +60,9 @@ if( $app->cfgCon("kf342")){
 	'Country' => $country,
 	'City' => $city,
 	'StreetAddress1' => $streetaddress);
-	
+
 
 	$conID = $app->updateCon($contact_id, $conDat);
-	echo $conID; 
-} 
+	echo $conID;
+}
 ?>
