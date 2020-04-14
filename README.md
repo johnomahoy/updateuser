@@ -2,17 +2,17 @@
 
 The script will update the contact fields and custom contact fields.
 
-These are the expected data from the user:firstname\  
-                                            lastname\  
-                                            email\  
-                                            phone\  
-                                            WebsiteUserId\  
-                                            TC\  
-                                            street\  
-                                            postalcode\  
-                                            country\  
-                                            city\  
-                                            FacebookHandURL\  
+These are the expected data from the user:firstname  
+                                            lastname  
+                                            email  
+                                            phone  
+                                            WebsiteUserId  
+                                            TC  
+                                            street  
+                                            postalcode  
+                                            country  
+                                            city  
+                                            FacebookHandURL  
 
 
 
